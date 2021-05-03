@@ -25,3 +25,6 @@ X_train, X_test, Y_train, Y_test = train_test_split(X, Y, random_state=9, train_
 #scaling the features
 X_train_scaled = X_train/255.0
 X_test_scaled = X_test/255.0
+
+#Fitting the training data into the model
+LR = LogisticRegression(solver='saga', multi_class='multinomial').fit(X_train_scaled, Y_train)

@@ -28,3 +28,8 @@ X_test_scaled = X_test/255.0
 
 #Fitting the training data into the model
 LR = LogisticRegression(solver='saga', multi_class='multinomial').fit(X_train_scaled, Y_train)
+
+#Calculating the accuracy of the model
+Y_pred = LR.predict(X_test_scaled)
+accuracy = accuracy_score(Y_test, Y_pred)
+print("The accuracy is : ",round(accuracy*100,2),"%")
